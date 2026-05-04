@@ -1,3 +1,3 @@
-#C Based http-server
+*C Based http-server
 
-Done mainly as a learning exercise
+Done mainly as a learning exercise.
