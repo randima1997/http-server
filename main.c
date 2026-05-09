@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
 	// This could be set to AF_INET or AF_INET6 for ipv4 and ipv6 respectively	
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
-
+	hints.ai_flags = AI_PASSIVE;
 
 	// The below statement makes the function call to obtain the IP address
 	// If there is an error (a non-zero value is returned) this is printed
@@ -87,6 +87,20 @@ int main(int argc, char *argv[]){
 	
 	}
 
+	
+	// Make a socket
+	
+	int sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+
+	if(sockfd == -1){
+		perror("socket");
+	}
+
+	printf("Socket Descriptor: %d\n", sockfd);
+
+	// Establish a connection
+	
+	int connect(sockfd, );
 
 	freeaddrinfo(res);
 	
